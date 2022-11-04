@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>hmrc-page-capture</title>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="popup.css">
+    <script defer src="popup.js"></script>
+</head>
+<body>
+
+<div class="panel">
+    <header>
+        <h1>Page Capture</h1>
+        <div>
+            version <span id="version"></span>
+        </div>
+    </header>
+</div>
+
+<div class="inner-panel">
+
+    <p id="description"></p>
+
+    <h2>Captured URLs (<span id="CapturedUrlsCount"></span>)</h2>
+    <details>
+        <div id="CapturedUrls"></div>
+    </details>
+    <h2>Excluded URLs (<span id="ExcludedUrlsCount"></span>)</h2>
+    <details>
+        <div id="ExcludedUrls"></div>
+    </details>
+    <h2>Errors (<span id="ErrorUrlsCount"></span>)</h2>
+    <details>
+        <div id="ErrorUrls"></div>
+    </details>
+</div>
+</body>
+</html>
