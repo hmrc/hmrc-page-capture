@@ -1,0 +1,25 @@
+{
+  "name": "HMRC Page Capture",
+  "version": "1.0.0",
+  "description": "Capture and store HMRC web page source code and assets.",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["http://localhost:*/*", "https://*.tax.service.gov.uk/*"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["downloads", "pageCapture", "storage"],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "hmrc-page-capture",
+  "version": "1.0.0",
+  "description": "Capture and store HMRC web page source code and assets.",
+  "scripts": {
+    "build": "webpack",
+    "start": "npm run build -- --watch"
+  },
+  "contributors": [
+    {
+      "name": "Tom McArdle",
+      "email": "tom.mcardle@digital.hmrc.gov.uk",
+      "url": "https://github.com/tmc-ee"
+    },
+    {
+      "name": "Viv Richards",
+      "email": "viv.richards@digital.hmrc.gov.uk",
+      "url": "https://github.com/vivrichards600"
+    }
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/chrome": "^0.0.204",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "sass": "^1.56.2",
+    "sass-loader": "^13.2.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
