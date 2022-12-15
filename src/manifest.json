@@ -13,7 +13,7 @@
       "run_at": "document_end"
     }
   ],
-  "permissions": ["downloads", "pageCapture", "storage"],
+  "permissions": ["downloads", "storage"],
   "icons": {
     "16": "icon.png",
     "48": "icon.png",
