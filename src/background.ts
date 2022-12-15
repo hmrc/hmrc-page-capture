@@ -1,17 +1,16 @@
 chrome.runtime.onMessage.addListener((request, sender, response) => {
-  // @ts-ignore
-  const documentId = sender.documentId;
   const pageUrl = sender.url;
   const page = request.payload;
+  const timestamp = Date.now();
 
   savePageUrl(pageUrl);
-  getPageData(documentId, page, pageUrl);
+  getPageData(timestamp, page, pageUrl);
 
   page.forEach((asset: string) => {
     const filename = JSON.parse(asset).filename;
     const url = JSON.parse(asset).url;
 
-    downloadPage(documentId, filename, url);
+    downloadPage(timestamp, filename, url);
   });
 });
 
@@ -26,8 +25,8 @@ function savePageUrl(url: string) {
   });
 }
 
-function getPageData(documentId: string, page: string[], url: string) {
-  const content = btoa(JSON.stringify({documentId: documentId, url: url}));
+function getPageData(timestamp: number, page: string[], url: string) {
+  const content = btoa(JSON.stringify({timestamp: timestamp, url: url}));
   const payload = JSON.stringify({
     url: `data:application/json;base64,${content}`,
     filename: 'data.json',
@@ -38,9 +37,9 @@ function getPageData(documentId: string, page: string[], url: string) {
   return page;
 }
 
-function downloadPage(documentId: string, filename: string, url: string) {
+function downloadPage(timestamp: number, filename: string, url: string) {
   chrome.downloads.download({
     url,
-    filename: `${documentId}/${filename}`,
+    filename: `${timestamp}/${filename}`,
   });
 }
