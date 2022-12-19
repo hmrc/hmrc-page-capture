@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper">
+        <h1><%= htmlWebpackPlugin.options.title %></h1>
+      </div>
+    </header>
+    <main class="content" tabindex="-1">
+      <div class="wrapper flow">
+        <h2>Captured URLs (<span id="urlCount"></span>)</h2>
+        <div>
+          <ul id="urlList" class="list" role="list"></ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

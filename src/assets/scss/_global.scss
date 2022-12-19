@@ -1,0 +1,76 @@
+:root {
+  --color-brand: #1d70b8;
+  --color-highlight: #ffdd00;
+  --color-border: #b1b4b6;
+  --color-dark: #0b0c0c;
+  --color-light: #ffffff;
+  --font-system: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --size-0: clamp(1rem, calc(0.92rem + 0.39vw), 1.25rem);
+  --size-1: clamp(1.2rem, calc(1.02rem + 0.88vw), 1.77rem);
+  --size-2: clamp(1.44rem, calc(1.11rem + 1.65vw), 2.5rem);
+  --size-3: clamp(1.73rem, calc(1.17rem + 2.8vw), 3.53rem);
+  --size-4: clamp(2.07rem, calc(1.17rem + 4.54vw), 5rem);
+  --size-5: clamp(2.49rem, calc(1.07rem + 7.11vw), 7.07rem);
+  --size-6: clamp(2.99rem, calc(0.81rem + 10.88vw), 9.99rem);
+}
+
+body {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-family: var(--font-system);
+  font-size: var(--size-0);
+  line-height: 1.4;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--size-2);
+}
+
+h2 {
+  font-size: var(--size-1);
+}
+
+h3 {
+  font-size: var(--size-0);
+}
+
+a:not([class]) {
+  color: var(--color-brand);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+:focus {
+  outline-color: var(--color-highlight);
+  outline-offset: 0.3ch;
+  outline-style: solid;
+  outline-width: 3px;
+
+  &:hover {
+    outline: none;
+  }
+}
+
+main:focus {
+  outline: none;
+}
+
+::selection {
+  background: var(--color-highlight);
+  color: var(--color-dark);
+}
