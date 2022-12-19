@@ -1,4 +1,8 @@
-chrome.runtime.onMessage.addListener((request, sender, response) => {
+import messageSender = chrome.runtime.MessageSender;
+
+chrome.runtime.onMessage.addListener(onPageLoaded);
+
+function onPageLoaded(request: any, sender: messageSender) {
   const pageUrl = sender.url;
   const page = request.payload;
   const timestamp = Date.now();
@@ -12,7 +16,7 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
 
     downloadPage(timestamp, filename, url);
   });
-});
+}
 
 function savePageUrl(url: string) {
   chrome.storage.sync.get({urls: []}, function (result) {
@@ -40,6 +44,6 @@ function getPageData(timestamp: number, page: string[], url: string) {
 function downloadPage(timestamp: number, filename: string, url: string) {
   chrome.downloads.download({
     url,
-    filename: `${timestamp}/${filename}`,
+    filename: `hmrc-page-capture/${timestamp}/${filename}`,
   });
 }
